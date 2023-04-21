@@ -463,7 +463,8 @@ function reloadStatistics() {
 /* #endregion */
 /* #region  open library cover and search api functions */
 function findOpenLibraryCoverKey(bookElement, title, author) {
-  let searchURL = "http://openlibrary.org/search.json?title=" + title;
+  if (title === "") title = '""';
+  let searchURL = "https://openlibrary.org/search.json?title=" + title;
   if (author) searchURL += "&author=" + author;
   fetch(searchURL)
     .then((a) => a.json())
