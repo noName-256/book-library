@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./javascript.js" defer></script>
+    <title>Book Library</title>
+  </head>
+  <body>
+    <header>
+      <div class="title">The Stoic Library</div>
+    </header>
+    <!-- .ribbon>((ul.general-information>(li.total{Total: }+li.read{Read: }+li.not-read{Not read: })^button{Add Book}))^.books> -->
+    <div class="ribbon">
+      <div class="left-side">
+        <div class="title no-display">My Books:</div>
+        <ul class="general-information">
+          <li class="total mobile" title="highlight all">Total books: 21</li>
+          <li class="read mobile" title="Highlight Read">Read books: 12</li>
+          <li class="not-read mobile" title="Highlight Not Read">
+            Not read books: 9
+          </li>
+
+          <li class="total" title="Highlight All">Total: 21</li>
+          <li class="read" title="Highlight Read">Read: 12</li>
+          <li class="not-read" title="Highlight Not Read">Not read: 9</li>
+        </ul>
+      </div>
+      <button>Add Book</button>
+    </div>
+    <div class="books">
+      <!-- note: the format for each card is .card>.book-cover+.book-data>(.title-and-author>(.title+.author)^.pages)^.buttons>(button.read+button.remove)^.read-data -->
+      <!-- <div class="card finished">
+        <div class="book-cover"></div>
+        <div class="book-data">
+          <div class="title-and-author">
+            <div class="title">Lord Of The Rings</div>
+            <div class="author">J.R.R Tolkien</div>
+          </div>
+          <div class="pages">216 pages</div>
+        </div>
+        <div class="buttons">
+          <button class="read">Read</button>
+          <button class="remove">Remove</button>
+        </div>
+        <div class="read-data">Finished</div>
+      </div> -->
+    </div>
+    <div class="popup-container hidden">
+      <form class="popup" action="" method="get">
+        <div class="top-side">
+          <legend>Add new book?</legend>
+          <button id="close" type="reset">
+            <img src="./close-icon.svg" alt="close" />
+          </button>
+        </div>
+        <input type="text" id="title" name="title" placeholder="Title" />
+        <input type="text" id="author" name="author" placeholder="Author" />
+        <input
+          type="number"
+          id="pages"
+          name="pages"
+          placeholder="Number Of Pages"
+        />
+        <label class="checkbox-container">
+          Finished reading it
+          <input id="is-read" type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <button id="submit-book" type="button">Add new book</button>
+      </form>
+    </div>
+  </body>
+</html>
