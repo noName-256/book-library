@@ -498,6 +498,6 @@ function Book(title, author, numberOfPages, isFinished) {
 }
 let bookDataArr = [];
 let currentDefaultCoverNumber = 0,
-  totalNumberOfDefaultCovers = 11;
+  totalNumberOfDefaultCovers = 10;
 addPopupListeners();
 setAllInitialBooks();

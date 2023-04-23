@@ -15,7 +15,15 @@ html {
   --spacing-on-left: 3vw;
   --bg-img: url(./library.jpg);
 }
-
+@media (orientation: portrait) and (max-width: 500px) {
+  html {
+    --bg-img: url(./portrait-library.jpg);
+  }
+  .books {
+    background-image: var(--bg-img);
+    background-size: auto 100%;
+  }
+}
 @media (min-width: 320px) {
   .books {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
